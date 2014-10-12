@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.dokdas\.com [NC]
+RewriteRule ^(.*)$ http://www.dokdas.com/$1 [R=301,NC,L]
+
+RewriteCond $1 !^(index\.php|css|js|test|codedoor|img|fonts|geecko-pedro|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]

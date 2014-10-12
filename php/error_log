@@ -1,0 +1,10 @@
+[21-Jun-2014 07:20:00 Europe/Berlin] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/dokdasco/public_html/php/application/views/formulario.php on line 18
+[21-Jun-2014 07:20:02 Europe/Berlin] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/dokdasco/public_html/php/application/views/formulario.php on line 18
+[21-Jun-2014 07:20:02 Europe/Berlin] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/dokdasco/public_html/php/application/views/formulario.php on line 18
+[21-Jun-2014 16:04:46 Europe/Berlin] PHP Fatal error:  Call to undefined method CI_Loader::views() in /home/dokdasco/public_html/php/application/controllers/registrarse.php on line 28
+[21-Jun-2014 16:29:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Registrar::verusuarios() in /home/dokdasco/public_html/php/application/controllers/registrarse.php on line 27
+[21-Jun-2014 16:29:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Registrar::verusuarios() in /home/dokdasco/public_html/php/application/controllers/registrarse.php on line 27
+[21-Jun-2014 16:29:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Registrar::verusuarios() in /home/dokdasco/public_html/php/application/controllers/registrarse.php on line 27
+[21-Jun-2014 21:46:44 Europe/Berlin] PHP Fatal error:  Call to a member function to() on a non-object in /home/dokdasco/public_html/php/application/controllers/welcome.php on line 28
+[21-Jun-2014 22:49:52 Europe/Berlin] PHP Fatal error:  Call to undefined function link_tag() in /home/dokdasco/public_html/php/application/views/include/head.php on line 8
+[21-Jun-2014 22:49:53 Europe/Berlin] PHP Fatal error:  Call to undefined function link_tag() in /home/dokdasco/public_html/php/application/views/include/head.php on line 8
