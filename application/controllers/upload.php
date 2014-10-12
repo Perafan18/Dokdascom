@@ -4,7 +4,9 @@ class Upload extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
+        $this->load->helper(array('form', 'url', 'html','cookie'));
+		$this->load->library('session');
+		$this->load->model(array("sesion","cargar"));
     }
 	function index()
 	{
@@ -21,7 +23,7 @@ class Upload extends CI_Controller {
 
 		$this->load->library('upload', $config);
 
-		if ( ! $this->upload->do_upload())
+		if ( ! $this->upload->do_upload('foto'))
 		{
 			$error = array('error' => $this->upload->display_errors());
 
@@ -34,6 +36,7 @@ class Upload extends CI_Controller {
 			$this->load->view('upload_success', $data);
 		}
 	}
+
 }
         
 ?>

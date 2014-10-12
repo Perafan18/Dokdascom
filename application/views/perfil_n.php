@@ -19,6 +19,41 @@
 		    
 		});
 	});
+	function ObtenerXHR(){
+			req=false;
+			if(window.XMLHttpRequest){
+				req=new XMLHttpRequest();
+			}else{
+				if(ActiveXObject){
+					var vectorVersiones = ["MSXML2.XMLHttp.5.0","MSXML2.XMLHttp.4.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp","Microsoft.XMLHttp"];
+					for(var i=0;i<vectorVersiones.length;i++){
+						try{
+							req= new ActiveXObject(vectorVersiones[i]);
+							return req;
+						}catch(e){}
+					}
+				}
+			}
+			return req;
+		}
+		
+		function primera(){
+			var peticion;
+		peticion = ObtenerXHR();
+		peticion.open("GET","menuajax.php?op=1",true);
+		peticion.onreadystatechange = procesarPeticion;
+		peticion.send(null);
+			
+			function procesarPeticion(){
+				if(peticion.readyState==4){
+					//termino la peticion
+					if(peticion.status==200){
+						var div = document.getElementById("NumOrdenesListas");
+						div.innerHTML = peticion.responseText;
+					}
+				}
+			}
+		}
 </script>
 <style>
         	body{
@@ -76,7 +111,7 @@
 			}
         </style>
 </head>
-<body>
+<body onLoad="inicio()">
 	<?echo $header;?>
     	<div id="div" class="hidden-phone">
     		&nbsp;
@@ -239,32 +274,6 @@
 									</div>
 								</div>
         					</div>
-        					<?if(isset($error)){?>
-        					<div class="row-fluid">
-        						<div class="span6 offset3">
-        							    <div class="alert alert-error">
-										    <button type="button" class="close" data-dismiss="alert">&times;</button>
-										    <strong><?=$error?></strong> 
-									    </div>
-        						</div>
-        					</div>
-        					<?}?>
-							<div class="row-fluid">
-				        		<div class="span3 offset3 well text-center">
-				        			<i class="fa fa-picture-o fa-2x"></i> <br>
-				        			<h5>Subir Imagen</h5>
-				        			<?php echo form_open_multipart('perfil/subir_foto');?>
-									<input onchange="this.form.submit()" name="foto" type="file" style="margin-top: -90px;height: 110px;position: absolute;margin-left: -90px;width:30;opacity:0">
-									</form>
-				        		</div>
-				        		<div>
-				        		</div>
-								<div class="span3 well text-center">
-									<i class="fa fa-film fa-2x"></i> <br>
-									<h5>Subir galeria</h5>
-									<input type="file" name="galeria" style="margin-top: -90px;height: 110px;position: absolute;margin-left: -90px;width:30%;opacity:0">
-								</div>
-				        	</div>
 <?/*
 				        	<div class="row-fluid" >
 				        		<div class="span3 offset3  text-center">
@@ -277,6 +286,16 @@
 								</div>
 				        	</div>
 */?>
+							
+				        	<div class="row-fluid">
+				        		<div class="span12 well">
+				        			<textarea name="" id="" style="width:85%;max-width:85%;min-width:84%;max-height:100px;" rows="2"></textarea>
+					        		<button class="btn btn-primary">Preguntar</button>
+					        		<label class="checkbox">
+										<input type="checkbox"> Preguntar como anonimo
+									</label>
+				        		</div>
+				        	</div>
         				</div>
         			</div>
         		</div>

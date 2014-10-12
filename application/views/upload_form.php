@@ -12,7 +12,7 @@
 
 <br /><br />
 
-<input type="submit" value="upload" />
+<input type="submit" value="subir" />
 
 </form>
 
